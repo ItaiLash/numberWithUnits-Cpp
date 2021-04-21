@@ -7,15 +7,7 @@ namespace ariel {
         return 0;
     }
 
-    /* Overloading in/out stream operators */
-    ostream& operator<<(ostream& out, const NumberWithUnits& num){
-        return out;
-    }
-    istream& operator>>(istream& in, NumberWithUnits& num){
-        return in;
-    }
-
-    /* Overloading arithmetic operators */
+    // Overloading arithmetic operators 
     NumberWithUnits operator+(const NumberWithUnits& num1, const NumberWithUnits& num2){
         return num1;
     }
@@ -35,7 +27,7 @@ namespace ariel {
         return num1;
     }
 
-    /* Overiding increase/decrease operators */
+    // Overiding increase/decrease operators 
     NumberWithUnits operator++(NumberWithUnits& num){
         return num;
     }
@@ -48,7 +40,7 @@ namespace ariel {
     NumberWithUnits operator--(NumberWithUnits& num, int){
         return num;
     }
-    /* Overiding multiplication operators */
+    // Overiding multiplication operators 
     NumberWithUnits operator*(NumberWithUnits& num, double d){
         return num;
     }
@@ -62,7 +54,7 @@ namespace ariel {
         return num;
     }
 
-    /* Overloading comparison operators */
+    // Overloading comparison operators
     bool operator>(const NumberWithUnits& num1, const NumberWithUnits& num2){
         return true;
     }
@@ -80,5 +72,13 @@ namespace ariel {
     }
     bool operator!=(const NumberWithUnits& num1, const NumberWithUnits& num2){
         return true;
+    }
+
+    // Overloading in/out stream operators 
+    ostream& operator<<(ostream& out, const NumberWithUnits& num){
+        return out;
+    }
+    istream& operator>>(istream& in, NumberWithUnits& num){
+        return in;
     }
 }

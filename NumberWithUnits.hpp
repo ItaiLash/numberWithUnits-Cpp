@@ -20,10 +20,6 @@ namespace ariel {
         static void read_units(ifstream& file);
         friend int compare(const NumberWithUnits& obj1, const NumberWithUnits& obj2);
 
-        /* Overloading in/out stream operators */
-        friend ostream& operator<<(ostream& out, const NumberWithUnits& num);
-        friend istream& operator>>(istream& in, NumberWithUnits& num);
-
         /* Overloading arithmetic operators */
         friend NumberWithUnits operator+(const NumberWithUnits& num1, const NumberWithUnits& num2);
         friend NumberWithUnits operator+(const NumberWithUnits& num);
@@ -33,7 +29,7 @@ namespace ariel {
         friend NumberWithUnits operator-=(NumberWithUnits& num1, const NumberWithUnits& num2);
 
         /* Overiding increase/decrease operators */
-        friend NumberWithUnits operator++(NumberWithUnits& num);       //prefix increment operator
+        friend NumberWithUnits operator++(NumberWithUnits& num);        //prefix increment operator
         friend NumberWithUnits operator++(NumberWithUnits& num, int);   //postfix increment operator
         friend NumberWithUnits operator--(NumberWithUnits& num);        //prefix increment operator
         friend NumberWithUnits operator--(NumberWithUnits& num, int);   //postfix increment operator
@@ -51,5 +47,9 @@ namespace ariel {
         friend bool operator<=(const NumberWithUnits& num1, const NumberWithUnits& num2);
         friend bool operator==(const NumberWithUnits& num1, const NumberWithUnits& num2);
         friend bool operator!=(const NumberWithUnits& num1, const NumberWithUnits& num2);
+
+        /* Overloading in/out stream operators */
+        friend ostream& operator<<(ostream& out, const NumberWithUnits& num);
+        friend istream& operator>>(istream& in, NumberWithUnits& num);
     };
 }
