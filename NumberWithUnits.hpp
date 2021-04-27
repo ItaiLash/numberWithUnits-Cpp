@@ -39,13 +39,6 @@ namespace ariel {
         }
 
         /* Overloading comparison operators */
-        // friend bool operator>(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        // friend bool operator>=(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        // friend bool operator<(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        // friend bool operator<=(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        // friend bool operator==(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        // friend bool operator!=(const NumberWithUnits& num1, const NumberWithUnits& num2);
-
         bool operator>(const NumberWithUnits& num) const;
         bool operator>=(const NumberWithUnits& num) const;
         bool operator<(const NumberWithUnits& num) const;

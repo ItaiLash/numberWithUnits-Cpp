@@ -120,35 +120,13 @@ namespace ariel {
         NumberWithUnits ans(this->quantity*d, this->unit);
         return ans;
     }
-    // NumberWithUnits operator*(double d, NumberWithUnits& num){
-    //     NumberWithUnits ans(num.quantity*d, num.unit);
-    //     return ans;
-    // }
+   
     NumberWithUnits& NumberWithUnits::operator*=(double d){
         this->quantity *= d;
         return *this;
     }
 
     // Overloading comparison operators
-    // bool operator>(const NumberWithUnits& num1, const NumberWithUnits& num2){
-    //     return compare(num1, num2) > 0;
-    // }
-    // bool operator>=(const NumberWithUnits& num1, const NumberWithUnits& num2){
-    //     return compare(num1, num2) >= 0;
-    // }
-    // bool operator<(const NumberWithUnits& num1, const NumberWithUnits& num2){
-    //     return compare(num1, num2) < 0;
-    // }
-    // bool operator<=(const NumberWithUnits& num1, const NumberWithUnits& num2){
-    //     return compare(num1, num2) <= 0;
-    // }
-    // bool operator==(const NumberWithUnits& num1, const NumberWithUnits& num2){
-    //     return compare(num1, num2) == 0;
-    // }
-    // bool operator!=(const NumberWithUnits& num1, const NumberWithUnits& num2){
-    //     return compare(num1, num2) != 0;
-    // }
-
     bool NumberWithUnits::operator>(const NumberWithUnits& num) const{
         return compare(*this, num) > 0;
     }
