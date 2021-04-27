@@ -12,41 +12,47 @@ namespace ariel {
         string unit;
 
     public:
-        NumberWithUnits(double quantity, string unit){
-            this->quantity = quantity;
-            this->unit = unit;
-        }
+        NumberWithUnits(double quantity, const string& unit);
         ~NumberWithUnits(){}
         static void read_units(ifstream& file);
         friend int compare(const NumberWithUnits& obj1, const NumberWithUnits& obj2);
 
         /* Overloading arithmetic operators */
-        friend NumberWithUnits operator+(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend NumberWithUnits operator+(const NumberWithUnits& num);
-        friend NumberWithUnits operator+=(NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend NumberWithUnits operator-(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend NumberWithUnits operator-(const NumberWithUnits& num);
-        friend NumberWithUnits operator-=(NumberWithUnits& num1, const NumberWithUnits& num2);
+        NumberWithUnits operator+(const NumberWithUnits& num);
+        NumberWithUnits operator+();
+        NumberWithUnits& operator+=(const NumberWithUnits& num);
+        NumberWithUnits operator-(const NumberWithUnits& num);
+        NumberWithUnits operator-();
+        NumberWithUnits& operator-=(const NumberWithUnits& num);
 
         /* Overiding increase/decrease operators */
-        friend NumberWithUnits operator++(NumberWithUnits& num);        //prefix increment operator
-        friend NumberWithUnits operator++(NumberWithUnits& num, int);   //postfix increment operator
-        friend NumberWithUnits operator--(NumberWithUnits& num);        //prefix increment operator
-        friend NumberWithUnits operator--(NumberWithUnits& num, int);   //postfix increment operator
+        NumberWithUnits& operator++();        //prefix increment operator
+        NumberWithUnits operator++(int);      //postfix increment operator
+        NumberWithUnits& operator--();        //prefix increment operator
+        NumberWithUnits operator--(int);      //postfix increment operator
 
         /* Overiding multiplication operators */
-        friend NumberWithUnits operator*(NumberWithUnits& num, double d);
-        friend NumberWithUnits operator*(double d, NumberWithUnits& num);
-        friend NumberWithUnits operator*=(NumberWithUnits& num, double d);
-        friend NumberWithUnits operator*=(double d, NumberWithUnits& num);
+        NumberWithUnits operator*(double d) const;
+        NumberWithUnits& operator*=(double d);
+        friend NumberWithUnits operator*(double d, const NumberWithUnits& num){
+            return num*d;
+        }
 
         /* Overloading comparison operators */
-        friend bool operator>(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend bool operator>=(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend bool operator<(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend bool operator<=(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend bool operator==(const NumberWithUnits& num1, const NumberWithUnits& num2);
-        friend bool operator!=(const NumberWithUnits& num1, const NumberWithUnits& num2);
+        // friend bool operator>(const NumberWithUnits& num1, const NumberWithUnits& num2);
+        // friend bool operator>=(const NumberWithUnits& num1, const NumberWithUnits& num2);
+        // friend bool operator<(const NumberWithUnits& num1, const NumberWithUnits& num2);
+        // friend bool operator<=(const NumberWithUnits& num1, const NumberWithUnits& num2);
+        // friend bool operator==(const NumberWithUnits& num1, const NumberWithUnits& num2);
+        // friend bool operator!=(const NumberWithUnits& num1, const NumberWithUnits& num2);
+
+        bool operator>(const NumberWithUnits& num) const;
+        bool operator>=(const NumberWithUnits& num) const;
+        bool operator<(const NumberWithUnits& num) const;
+        bool operator<=(const NumberWithUnits& num) const;
+        bool operator==(const NumberWithUnits& num) const;
+        bool operator!=(const NumberWithUnits& num) const;
+
 
         /* Overloading in/out stream operators */
         friend ostream& operator<<(ostream& out, const NumberWithUnits& num);

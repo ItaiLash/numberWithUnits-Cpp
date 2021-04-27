@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "*.tcc": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "iosfwd": "cpp",
+        "vector": "cpp",
+        "stdexcept": "cpp",
+        "limits": "cpp",
+        "iomanip": "cpp"
     }
 }

@@ -12,7 +12,6 @@
 using namespace ariel;
 using namespace std;
 
-static vector<string> units = {"m"};
 ifstream units_file{"units.txt"};
 
 TEST_CASE("Binary + and - operator"){
